@@ -1,0 +1,7 @@
+{
+  "timedTransfers": false,
+  "timerTimeInMinutes": 1,
+  "showNotificationOnMinimize": true,
+  "startWithWindows": false,
+  "startMinimized": false
+}

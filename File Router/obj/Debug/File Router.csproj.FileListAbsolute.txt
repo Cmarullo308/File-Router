@@ -1,0 +1,23 @@
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\File Router.exe.config
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\File Router.exe
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\File Router.pdb
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.mainWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.Properties.Resources.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.csproj.GenerateResource.cache
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.csproj.CoreCompileInputs.cache
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.exe
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.pdb
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.AddWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Newtonsoft.Json.dll
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Newtonsoft.Json.xml
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.csproj.CopyComplete
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.EditWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File Router.csprojAssemblyReference.cache
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.errorWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Microsoft.WindowsAPICodePack.dll
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.settingsWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.ConfirmationWindow.resources
+G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\obj\Debug\File_Router.AboutWindow.resources

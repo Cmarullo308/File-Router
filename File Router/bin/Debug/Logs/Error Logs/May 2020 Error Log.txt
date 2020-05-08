@@ -1,0 +1,59 @@
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
+
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
+
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
+
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
+
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
+
+--------Error at 5/6/2020 8:05:06 PM--------
+System.IO.IOException: This drive is locked by BitLocker Drive Encryption. You must unlock this drive from Control Panel.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.GetFiles(String path)
+   at File_Router.MainWindow.routeFiles() in G:\User Files\CJ\My Files\Code\C#\File-Router\File Router\MainWindow.cs:line 87
+------------------------------------------------------------------------------------------------
