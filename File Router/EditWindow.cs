@@ -142,14 +142,21 @@ namespace File_Router {
         private void chooseSourceDirectoryButton_Click(object sender, EventArgs e) {
             String directory = "C:\\";
 
+            if (Program.data.lastDirectorySelected != null) {
+                if (Directory.Exists(Program.data.lastDirectorySelected)) {
+                    directory = Program.data.lastDirectorySelected;
+                }
+            }
+
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.InitialDirectory = directory;
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok) {
                 directory = dialog.FileName;
+                sourceDirectoryTextBox.Text = directory;
+                Program.data.lastDirectorySelected = directory;
+                Program.saveData();
             }
-
-            sourceDirectoryTextBox.Text = directory;
         }
 
         /// <summary>
@@ -160,14 +167,21 @@ namespace File_Router {
         private void chooseDestinationDirectoryButton_Click(object sender, EventArgs e) {
             String directory = "C:\\";
 
+            if (Program.data.lastDirectorySelected != null) {
+                if (Directory.Exists(Program.data.lastDirectorySelected)) {
+                    directory = Program.data.lastDirectorySelected;
+                }
+            }
+
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.InitialDirectory = directory;
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok) {
                 directory = dialog.FileName;
+                destinationDirectoryTextBox.Text = directory;
+                Program.data.lastDirectorySelected = directory;
+                Program.saveData();
             }
-
-            destinationDirectoryTextBox.Text = directory;
         }
     }
 }

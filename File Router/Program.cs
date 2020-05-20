@@ -9,9 +9,10 @@ using Microsoft.Win32;
 
 namespace File_Router {
     static class Program {
-        public static string version = "1.0";
+        public static string version = "1.1";
 
         public static Settings settings;
+        public static Data data;
         public static string transferLogsPath = @"Logs\Transfer Logs";
         public static string errorLogsPath = @"Logs\Error Logs";
 
@@ -19,7 +20,9 @@ namespace File_Router {
         static void Main() {
             try {
                 settings = new Settings();
+                data = new Data();
                 loadSettings();
+                loadData();
                 createLogsFolders();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -104,6 +107,24 @@ namespace File_Router {
 
             string jsonString = JsonConvert.SerializeObject(settings, Formatting.Indented);
             File.WriteAllText(@"Data\Settings.json", jsonString);
+        }
+
+        public static void loadData() {
+            if (File.Exists(@"Data\Data.json")) {
+                string jsonResult = File.ReadAllText(@"Data\Data.json");
+                data = JsonConvert.DeserializeObject<Data>(jsonResult);
+            } else {
+                saveData();
+            }
+        }
+
+        public static void saveData() {
+            if (!Directory.Exists("Data")) {
+                Directory.CreateDirectory("Data");
+            }
+
+            string jsonString = JsonConvert.SerializeObject(data, Formatting.Indented);
+            File.WriteAllText(@"Data\Data.json", jsonString);
         }
 
         /// <summary>

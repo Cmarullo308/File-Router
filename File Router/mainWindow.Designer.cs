@@ -42,31 +42,32 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.settingsMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transferLogsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeListLabel = new System.Windows.Forms.Label();
             this.routeFilesLabel = new System.Windows.Forms.Label();
             this.numberOfMinutesTextBox = new System.Windows.Forms.TextBox();
             this.routeContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeFilesNowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.button1 = new System.Windows.Forms.Button();
-            this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsMenuButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transferLogsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lastTransferTimeLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.routeContextMenuStrip.SuspendLayout();
             this.notifyIconContextMenuStrip.SuspendLayout();
@@ -143,6 +144,7 @@
             this.sourceLabel.TabIndex = 6;
             this.sourceLabel.Text = "Source: ";
             this.sourceLabel.Visible = false;
+            this.sourceLabel.Click += new System.EventHandler(this.sourceLabel_Click);
             // 
             // destinationLabel
             // 
@@ -154,6 +156,7 @@
             this.destinationLabel.TabIndex = 7;
             this.destinationLabel.Text = "Destination: ";
             this.destinationLabel.Visible = false;
+            this.destinationLabel.Click += new System.EventHandler(this.destinationLabel_Click);
             // 
             // timedTransferCheckBox
             // 
@@ -211,15 +214,61 @@
             this.fIleToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fIleToolStripMenuItem.Text = "File";
             // 
+            // addMenuItem
+            // 
+            this.addMenuItem.Image = global::File_Router.Properties.Resources.Add_16x;
+            this.addMenuItem.Name = "addMenuItem";
+            this.addMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.addMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.addMenuItem.Text = "Add";
+            this.addMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // editMenuItem
+            // 
+            this.editMenuItem.Image = global::File_Router.Properties.Resources.ASX_Edit_blue_16x;
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Return)));
+            this.editMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.editMenuItem.Text = "Edit";
+            this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
+            // 
+            // deleteMenuItem
+            // 
+            this.deleteMenuItem.Image = global::File_Router.Properties.Resources.x_icon;
+            this.deleteMenuItem.Name = "deleteMenuItem";
+            this.deleteMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.deleteMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.deleteMenuItem.Text = "Delete";
+            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
             // 
+            // settingsMenuButton
+            // 
+            this.settingsMenuButton.Image = global::File_Router.Properties.Resources.Settings_16x;
+            this.settingsMenuButton.Name = "settingsMenuButton";
+            this.settingsMenuButton.ShortcutKeyDisplayString = "Ctrl+.";
+            this.settingsMenuButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
+            this.settingsMenuButton.Size = new System.Drawing.Size(158, 22);
+            this.settingsMenuButton.Text = "Settings";
+            this.settingsMenuButton.Click += new System.EventHandler(this.settingsMenuItem_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
+            // 
+            // exitMenuItem
+            // 
+            this.exitMenuItem.Image = global::File_Router.Properties.Resources.Close_16x;
+            this.exitMenuItem.Name = "exitMenuItem";
+            this.exitMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.exitMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.exitMenuItem.Text = "Exit";
+            this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
             // logsToolStripMenuItem
             // 
@@ -230,11 +279,19 @@
             this.logsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.logsToolStripMenuItem.Text = "Logs";
             // 
+            // transferLogsMenuItem
+            // 
+            this.transferLogsMenuItem.Image = global::File_Router.Properties.Resources.Log;
+            this.transferLogsMenuItem.Name = "transferLogsMenuItem";
+            this.transferLogsMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.transferLogsMenuItem.Text = "Transfer Logs";
+            this.transferLogsMenuItem.Click += new System.EventHandler(this.transferLogsMenuItem_Click);
+            // 
             // errorMenuItem
             // 
             this.errorMenuItem.Image = global::File_Router.Properties.Resources.warning_exclamation;
             this.errorMenuItem.Name = "errorMenuItem";
-            this.errorMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.errorMenuItem.Size = new System.Drawing.Size(143, 22);
             this.errorMenuItem.Text = "Error Log";
             this.errorMenuItem.Click += new System.EventHandler(this.errorMenuItem_Click);
             // 
@@ -245,6 +302,15 @@
             this.infolStripMenuItem1.Name = "infolStripMenuItem1";
             this.infolStripMenuItem1.Size = new System.Drawing.Size(40, 20);
             this.infolStripMenuItem1.Text = "Info";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::File_Router.Properties.Resources.Info100;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // routeListLabel
             // 
@@ -286,6 +352,22 @@
             this.routeContextMenuStrip.Name = "routeContextMenuStrip";
             this.routeContextMenuStrip.Size = new System.Drawing.Size(108, 48);
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::File_Router.Properties.Resources.ASX_Edit_blue_16x;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::File_Router.Properties.Resources.x_icon;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // notifyIconContextMenuStrip
             // 
             this.notifyIconContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -324,6 +406,14 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(113, 6);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::File_Router.Properties.Resources.Close_16x;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -339,98 +429,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.routeButtonClicked);
             // 
-            // addMenuItem
+            // lastTransferTimeLabel
             // 
-            this.addMenuItem.Image = global::File_Router.Properties.Resources.Add_16x;
-            this.addMenuItem.Name = "addMenuItem";
-            this.addMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.addMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.addMenuItem.Text = "Add";
-            this.addMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-            // 
-            // editMenuItem
-            // 
-            this.editMenuItem.Image = global::File_Router.Properties.Resources.ASX_Edit_blue_16x;
-            this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Return)));
-            this.editMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.editMenuItem.Text = "Edit";
-            this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
-            // 
-            // deleteMenuItem
-            // 
-            this.deleteMenuItem.Image = global::File_Router.Properties.Resources.x_icon;
-            this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.deleteMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.deleteMenuItem.Text = "Delete";
-            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
-            // 
-            // settingsMenuButton
-            // 
-            this.settingsMenuButton.Image = global::File_Router.Properties.Resources.Settings_16x;
-            this.settingsMenuButton.Name = "settingsMenuButton";
-            this.settingsMenuButton.ShortcutKeyDisplayString = "Ctrl+.";
-            this.settingsMenuButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
-            this.settingsMenuButton.Size = new System.Drawing.Size(158, 22);
-            this.settingsMenuButton.Text = "Settings";
-            this.settingsMenuButton.Click += new System.EventHandler(this.settingsMenuItem_Click);
-            // 
-            // exitMenuItem
-            // 
-            this.exitMenuItem.Image = global::File_Router.Properties.Resources.Close_16x;
-            this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.exitMenuItem.Text = "Exit";
-            this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
-            // 
-            // transferLogsMenuItem
-            // 
-            this.transferLogsMenuItem.Image = global::File_Router.Properties.Resources.Log;
-            this.transferLogsMenuItem.Name = "transferLogsMenuItem";
-            this.transferLogsMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.transferLogsMenuItem.Text = "Transfer Logs";
-            this.transferLogsMenuItem.Click += new System.EventHandler(this.transferLogsMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::File_Router.Properties.Resources.Info100;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::File_Router.Properties.Resources.ASX_Edit_blue_16x;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::File_Router.Properties.Resources.x_icon;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Image = global::File_Router.Properties.Resources.Close_16x;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.lastTransferTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lastTransferTimeLabel.AutoSize = true;
+            this.lastTransferTimeLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lastTransferTimeLabel.Location = new System.Drawing.Point(988, 41);
+            this.lastTransferTimeLabel.Name = "lastTransferTimeLabel";
+            this.lastTransferTimeLabel.Size = new System.Drawing.Size(115, 13);
+            this.lastTransferTimeLabel.TabIndex = 15;
+            this.lastTransferTimeLabel.Text = "LastTransferTimeLabel";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.lastTransferTimeLabel);
             this.Controls.Add(this.numberOfMinutesTextBox);
             this.Controls.Add(this.routeFilesLabel);
             this.Controls.Add(this.button1);
@@ -503,6 +518,7 @@
         private System.Windows.Forms.ToolStripMenuItem routeFilesNowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label lastTransferTimeLabel;
     }
 }
 

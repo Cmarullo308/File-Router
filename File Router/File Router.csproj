@@ -79,6 +79,7 @@
     <Compile Include="ConfirmationWindow.Designer.cs">
       <DependentUpon>ConfirmationWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="EditWindow.cs">
       <SubType>Form</SubType>
     </Compile>

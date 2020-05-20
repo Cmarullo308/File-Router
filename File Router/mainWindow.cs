@@ -44,6 +44,12 @@ namespace File_Router {
                 this.WindowState = FormWindowState.Minimized;
             }
             setupTimer();
+
+            if(Program.data.lastTransfer.Year != 1) {
+                lastTransferTimeLabel.Text = "Last transfer: " + Program.data.lastTransfer.ToString();
+            } else {
+                lastTransferTimeLabel.Visible = false;
+            }
         }
 
         /// <summary>
@@ -160,6 +166,12 @@ namespace File_Router {
 
             isTransfering = false;
             this.InvokeEx(f => f.routeFilesLabel.Text = "Route Files");
+
+            Program.data.lastTransfer = DateTime.Now;
+            this.InvokeEx(f => f.lastTransferTimeLabel.Text = "Last transfer: " + Program.data.lastTransfer.ToString());
+            this.InvokeEx(f => f.lastTransferTimeLabel.Visible = true);
+            Console.WriteLine("BBBB");
+            Program.saveData();
         }
 
         private void QuitProgram() {
@@ -640,6 +652,46 @@ namespace File_Router {
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             AboutWindow aboutWindow = new AboutWindow();
             aboutWindow.ShowDialog();
+        }
+
+        private void sourceLabel_Click(object sender, EventArgs e) {
+            int index = routeNameList.SelectedIndex;
+            if (index < 0) {
+                return;
+            }
+
+            Route route = routeData.routes.ElementAt(index);
+
+            if (!Directory.Exists(route.sourceFolder)) {
+                ErrorWindow errorWindow = new ErrorWindow(this, "Directory missing", "The source directory for " + route.name + " cannot be found");
+                errorWindow.ShowDialog();
+            }
+
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() {
+                FileName = route.sourceFolder,
+                UseShellExecute = true,
+                Verb = "open"
+            });
+        }
+
+        private void destinationLabel_Click(object sender, EventArgs e) {
+            int index = routeNameList.SelectedIndex;
+            if (index < 0) {
+                return;
+            }
+
+            Route route = routeData.routes.ElementAt(index);
+
+            if (!Directory.Exists(route.destinationFolder)) {
+                ErrorWindow errorWindow = new ErrorWindow(this, "Directory missing", "The destination directory for " + route.name + " cannot be found");
+                errorWindow.ShowDialog();
+            }
+
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() {
+                FileName = route.destinationFolder,
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
     }
 
